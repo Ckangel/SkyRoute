@@ -37,6 +37,7 @@
     min-height: 100vh;
 }
 
+
 .sidebar {
     width: 290px;
     background-color: var(--color-bg);
@@ -177,6 +178,239 @@ header {
 }
 /* end of notice style here */
 
+
+/* iterary style start here */
+/* Notification Styles */
+.notification {
+  background-color: #e3f2fd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  color: #1e3a8a;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Success Message Styles */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  display: none;
+}
+
+/* Form Container Styles */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Element Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.phone-group {
+  display: flex;
+  gap: 0;
+}
+
+.phone-group select {
+  width: 120px;
+  border-radius: 4px 0 0 4px;
+}
+
+.phone-group input {
+  border-radius: 0 4px 4px 0;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-bg);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--color-gray-700);
+}
+
+/* Error Styles */
+.error {
+  border: 2px solid #ff0000;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+/* end of itenary style here */
+
+/* client start here style */
+.clients{
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.title{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title h3{
+  font-size: 1.8rem;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.clients_grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+}
+.client_company{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition:  transform 0.3 ease;
+}
+.client_company:hover{
+  transform: translateY(-5px);
+}
+.client_company img{
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.client_company p{
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+/* end of clients style */
+
+/* about style start here */
+.about {
+  background-image: url("../images/aeroplane2");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10rem;
+  transform: translateY(5px);
+}
+.about h3,p{
+  text-align: center;
+}
+.about_page{
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about_title{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about_title h2{
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 700;
+}
+.about_content{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+}
+.about_contentPage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.4rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition:  transform 0.3 ease;
+}
+.about_contentPage:hover{
+  transform: translateY(-6px);
+}
+.about_contentPage h4{
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+ .fa-solid{
+  margin-right: 1rem;
+  font-size: 1.7rem;
+}
+/* time zones style */
+#time-display {
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.time-zones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.time-zone {
+  background: var(--mporipori-color);
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  border-radius: 5px;
+}
+.time-zone span {
+  font-weight: bold;
+}
+
 /* footer style */
 footer {
   background-color: var(--color-bg);
@@ -286,7 +520,84 @@ a {
     color: #007bff;
   }
 
+
 /* Responsive Design */
+
+@media (max-width:1024px){
+  .clients_grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .about_content{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+
+}
+ @media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+
+  .form-container {
+      padding: 15px;
+  }
+
+  .notification, .success-message {
+      font-size: 14px;
+  }
+
+  h2 {
+      font-size: 20px;
+  }
+
+  .phone-group select {
+      width: 100px;
+  }
+
+  input, select, button {
+      font-size: 12px;
+      padding: 8px;
+  }
+  /* clients style */
+  .clients_grid{
+    grid-template-columns: 1fr;
+  }
+  .title h3{
+    font-size: 1.5rem;
+  }
+  .client_company{
+    padding: 1rem;
+  }
+  .client_company img{
+    max-width: 120px;
+  }
+  /* about style */
+  .about_content{
+    grid-template-columns: 1fr;
+
+  }
+  .about_title{
+    font-size: 1.4rem;
+  }
+  .about_contentPage{
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .phone-group {
+      flex-direction: column;
+  }
+
+  .phone-group select, .phone-group input {
+      width: 100%;
+      border-radius: 4px;
+  }
+
+  .phone-group select {
+      margin-bottom: 10px;
+  }
+}
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -352,27 +663,6 @@ a {
     
 }
 
-#time-display {
-  background-color: #f0f4f8;
-  padding: 20px;
-  border-radius: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
 
-#time-display h2 {
-  margin-bottom: 15px;
-  color: #333;
-}
 
-#time-display p {
-  font-size: 1.2em;
-  margin: 10px 0;
-  color: #555;
-}
 
-#time-display span {
-  font-weight: bold;
-  color: #222;
-}
