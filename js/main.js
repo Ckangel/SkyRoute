@@ -510,6 +510,7 @@ fetch("data/description.json")
   window.addEventListener('load', () => {
       loadTimes();
       setInterval(updateTimes, 1000);
+<<<<<<< HEAD
   });
 
   // Sample data (replace with real API data in production)
@@ -586,3 +587,6 @@ new Chart(destinationCtx, {
         responsive: true
     }
 });
+=======
+  });
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b

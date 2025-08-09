@@ -36,6 +36,11 @@
     display: flex;
     min-height: 100vh;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
 .sidebar {
   width: 250px;
   background: var(--color-bg);
@@ -380,6 +385,7 @@ input, select {
   margin-right: 1rem;
   font-size: 1.7rem;
 }
+<<<<<<< HEAD
 
 /* contact page style */
 .section{
@@ -460,6 +466,8 @@ textarea{
   color: var(--color-white);
 }
 
+=======
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
 /* time zones style */
 #time-display {
   background-color: #f0f4f8;
@@ -484,6 +492,7 @@ textarea{
 .time-zone span {
   font-weight: bold;
 }
+<<<<<<< HEAD
 /* analystics style. */
 .container-01 {
   max-width: 1200px;
@@ -525,6 +534,8 @@ h1 {
 canvas {
   max-width: 100%;
 }
+=======
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
 
 /* footer style */
 footer {
@@ -637,6 +648,7 @@ a {
 
 
 /* Responsive Design */
+<<<<<<< HEAD
 @media (min-width: 1024px) {
   .section {
       padding: 3rem 2rem;
@@ -653,6 +665,8 @@ a {
     grid-template-columns: repeat(2,1fr);
   } */
 }
+=======
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
 
 @media (max-width:1024px){
   .clients_grid{
@@ -661,14 +675,23 @@ a {
   .about_content{
     grid-template-columns: repeat(2,1fr);
   }
+<<<<<<< HEAD
   .footer{
     grid-template-columns: repeat(2,1fr);
   }
+=======
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
 
 
 }
  @media (max-width: 600px) {
+<<<<<<< HEAD
  
+=======
+  body {
+      padding: 10px;
+  }
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
 
   .form-container {
       padding: 15px;
@@ -691,6 +714,7 @@ a {
       padding: 8px;
   }
   /* clients style */
+<<<<<<< HEAD
   .clients {
     margin-top: 40px;
 }
@@ -714,6 +738,20 @@ a {
     height: 100px;
     margin-bottom: 10px;
 }
+=======
+  .clients_grid{
+    grid-template-columns: 1fr;
+  }
+  .title h3{
+    font-size: 1.5rem;
+  }
+  .client_company{
+    padding: 1rem;
+  }
+  .client_company img{
+    max-width: 120px;
+  }
+>>>>>>> ed447770c3d60166f4686be1d6fa634807fbd26b
   /* about style */
   .about_content{
     grid-template-columns: 1fr;
