@@ -12,6 +12,7 @@
     
         <!-- script -->
         <script src="./js/main.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <!-- end here -->
     
         <!-- icon links -->
@@ -51,32 +52,34 @@
                     <button class="btn"><a href="about.html">Read More</a></button> <i class="fas fa-plus"></i>
                 </div>
             </header>
-            <section class="content-area">
-               
-            </section>
             <section>
-                <div class="card alert-card">
-                    <div class="alert-message" id="alert-message"></div>
-                    <img src="images/Gashaka-Gumti_National_Park,_Taraba,_Nigeria..webp" alt="West Africa Tourist Attraction" class="alert-image">
-                </div>
-            </section>
-            <section>
-                <div class="booking">
-                    <h2>West Africa Tour booking</h2>
-                    <div id="content"></div>
-                </div>
-            </section>
-            <div class="notes">
-                <div class="page" id="time-display">
-                    <h2>WELCOME TO REAL DETECT</h2>
-                    <div class="time-zones" id="timeZones">
-                        <!-- it display here -->  
+                <div class="container_01">
+                    <h1>Daily Flight Travel Analytics</h1>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3>Total Flights Today</h3>
+                            <p id="totalFlights">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Top Destination</h3>
+                            <p id="topDestination">Loading...</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Average Flight Duration</h3>
+                            <p id="avgDuration">0 hrs</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h2>Flights by Region</h2>
+                        <canvas id="regionChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h2>Top 5 Destinations</h2>
+                        <canvas id="destinationChart"></canvas>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <footer>
-               
                 <div class="footer footer_container">
                     <article>
                         <h2>About Us</h2>
@@ -129,12 +132,6 @@
                                 <h3>ALERT</h3>
                             </li>
                         </ul>
-                        
                     </div>
                 </div>
             </footer>
-        </main>
-    </div>
-    
-</body>
-</html>
