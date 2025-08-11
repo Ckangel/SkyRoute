@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SKYROUTE | WEST AFRICA 2025</title>
@@ -158,3 +159,208 @@
   </script>
 </body>
 </html>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Time Display with Auto-Detected Time Zone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        .time-zones {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .time-zone {
+            background: #444;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        .time-zone span {
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .time-zones {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Welcome to Our Website</h1>
+        <p>Content goes here...</p>
+    </main>
+    <footer>
+        <div class="time-zones" id="timeZones">
+            <!-- Time zones will be populated by JavaScript -->
+        </div>
+    </footer>
+    <script>
+        // Detect user's time zone
+        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const userCity = userTimeZone.split('/').pop().replace('_', ' '); // e.g., "Dar es Salaam" from "Africa/Dar_es_Salaam"
+
+        // Define time zones including user's detected time zone
+        const timeZones = [
+            { name: 'New York', zone: 'America/New_York' },
+            { name: 'London', zone: 'Europe/London' },
+            { name: 'Tokyo', zone: 'Asia/Tokyo' },
+            { name: 'Sydney', zone: 'Australia/Sydney' },
+            { name: userCity, zone: userTimeZone } // Dynamically add user's time zone
+        ];
+
+        // Function to format time for a given time zone
+        function getFormattedTime(timeZone) {
+            const options = {
+                timeZone: timeZone,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+                timeZoneName: 'short'
+            };
+            return new Intl.DateTimeFormat('en-US', options).format(new Date());
+        }
+
+        // Function to update times and save to localStorage
+        function updateTimes() {
+            const timeData = {};
+            const timeZonesContainer = document.getElementById('timeZones');
+            timeZonesContainer.innerHTML = '';
+
+            timeZones.forEach(({ name, zone }) => {
+                const time = getFormattedTime(zone);
+                timeData[name] = { zone, time };
+
+                const timeElement = document.createElement('div');
+                timeElement.className = 'time-zone';
+                timeElement.innerHTML = `<span>${name}:</span> ${time}`;
+                timeZonesContainer.appendChild(timeElement);
+            });
+
+            // Save to localStorage
+            localStorage.setItem('worldTimes', JSON.stringify(timeData)); // *** localStorage Usage: Saving time data ***
+        }
+
+        // Load times from localStorage on page load
+        function loadTimes() {
+            const savedTimes = localStorage.getItem('worldTimes'); // *** localStorage Usage: Retrieving time data ***
+            if (savedTimes) {
+                const timeData = JSON.parse(savedTimes);
+                const timeZonesContainer = document.getElementById('timeZones');
+                timeZonesContainer.innerHTML = '';
+
+                Object.entries(timeData).forEach(([name, { time }]) => {
+                    const timeElement = document.createElement('div');
+                    timeElement.className = 'time-zone';
+                    timeElement.innerHTML = `<span>${name}:</span> ${time}`;
+                    timeZonesContainer.appendChild(timeElement);
+                });
+
+                // Update immediately after loading to ensure fresh times
+                setTimeout(updateTimes, 1000);
+            } else {
+                updateTimes();
+            }
+        }
+
+        // Update times every second
+        window.addEventListener('load', () => {
+            loadTimes();
+            setInterval(updateTimes, 1000);
+        });
+    </script>
+</body>
+</html>
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333; /* Dark background for the navbar */
+    padding: 15px;
+}
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_links li {
+    margin: 0 20px;
+}
+
+.nav_links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.nav_links li a:hover {
+    color: #ddd; /* Lighten on hover */
+}
+
+.navbar-toggler {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block; /* Show hamburger menu on small screens */
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .nav_links {
+        display: none; /* Hide menu by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        padding: 20px 0;
+    }
+
+    .nav_links.active {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .nav_links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+>>>>>>> f783744a0bdbac85cc4cdf0c21a152b8696f4d9a

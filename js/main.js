@@ -1,6 +1,76 @@
 
 
+<<<<<<< HEAD
 
+=======
+// Close sidebar if clicked outside on small screens
+// document.addEventListener("click", (event) => {
+//   if (
+//     window.innerWidth <= 768 &&
+//     !sidebar.contains(event.target) &&
+//     !menuToggle.contains(event.target)
+//   ) {
+//     sidebar.classList.remove("collapsed");
+//   }
+// });
+
+// // === Time Display Elements ===
+// const ghanaTime = document.getElementById("ghana-time");
+// const nigeriaTime = document.getElementById("nigeria-time");
+// const tanzaniaTime = document.getElementById("tanzania-time");
+
+// // === Clock Module ===
+// const SkyRouteClock = {
+//   update() {
+//     const now = new Date();
+//     const formatOptions = {
+//       hour: "2-digit",
+//       minute: "2-digit",
+//       second: "2-digit",
+//     };
+
+//     ghanaTime.textContent = now.toLocaleString("en-US", {
+//       timeZone: "Africa/Accra",
+//       ...formatOptions,
+//     });
+//     nigeriaTime.textContent = now.toLocaleString("en-US", {
+//       timeZone: "Africa/Lagos",
+//       ...formatOptions,
+//     });
+//     tanzaniaTime.textContent = now.toLocaleString("en-US", {
+//       timeZone: "Africa/Dar_es_Salaam",
+//       ...formatOptions,
+//     });
+//   },
+//   init() {
+//     this.update();
+//     setInterval(() => this.update(), 1000);
+//   },
+// };
+
+// SkyRouteClock.init();
+
+// // === Alert Module ===
+// const alertMessage = document.getElementById("alert-message");
+
+// const SkyRouteAlerts = {
+//   news: [
+//     "New festival in Ghana: Explore the vibrant Ashanti culture at the Kumasi Adae Festival, starting August 15, 2025!",
+//     "Nigeria's Osun-Osogbo Festival 2025: A UNESCO site opens for tourists with enhanced safety measures.",
+//     "Senegal's Goree Island tours expanded: Visit historic sites with new guided tours starting next month.",
+//   ],
+//   update() {
+//     const randomNews = this.news[Math.floor(Math.random() * this.news.length)];
+//     alertMessage.textContent = randomNews;
+//   },
+//   init() {
+//     this.update();
+//     setInterval(() => this.update(), 5000);
+//   },
+// };
+
+// SkyRouteAlerts.init();
+>>>>>>> f783744a0bdbac85cc4cdf0c21a152b8696f4d9a
 
 // === Tour Content Loader ===
 fetch("data/description.json")
@@ -18,7 +88,10 @@ fetch("data/description.json")
     console.error("Failed to fetch data: ", error);
   });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f783744a0bdbac85cc4cdf0c21a152b8696f4d9a
 //   // sky route
 //    // Aviation Stack API key (replace with your own)
 //    const API_KEY = 'bcb571f2f023cb4c798761d96a415314';
@@ -31,7 +104,11 @@ fetch("data/description.json")
 //            if (data.data && data.data.length > 0) {
 //                const route = data.data[0];
 //                document.getElementById('flightNotification').innerHTML = `
+<<<<<<< HEAD
 //                    <p>Latest Route: ${route.departure.iata} (${route.departure.name}) to 
+=======
+//                    <p>Latest Route: ${route.departure.iata} (${route.departure.name}) to
+>>>>>>> f783744a0bdbac85cc4cdf0c21a152b8696f4d9a
 //                    ${route.arrival.iata} (${route.arrival.name}) operated by ${route.airline.name}</p>
 //                `;
 //            } else {
@@ -364,6 +441,7 @@ fetch("data/description.json")
 //    fetchFlightRoutes();
 //    populateDestinations();
 
+<<<<<<< HEAD
 
   //  detect user time zone
   
@@ -514,3 +592,171 @@ new Chart(destinationCtx, {
         responsive: true
     }
 });
+=======
+//  detect user time zone
+
+const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const userCity = userTimeZone.split("/").pop().replace("_", " "); // e.g., "Dar es Salaam" from "Africa/Dar_es_Salaam"
+
+// Define time zones including user's detected time zone
+const timeZones = [
+  { name: "New York", zone: "America/New_York" },
+  { name: "London", zone: "Europe/London" },
+  { name: "Tokyo", zone: "Asia/Tokyo" },
+  { name: "Sydney", zone: "Australia/Sydney" },
+  { name: userCity, zone: userTimeZone }, // Dynamically add user's time zone
+];
+
+// Function to format time for a given time zone
+function getFormattedTime(timeZone) {
+  const options = {
+    timeZone: timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+    timeZoneName: "short",
+  };
+  return new Intl.DateTimeFormat("en-US", options).format(new Date());
+}
+
+// Function to update times and save to localStorage
+function updateTimes() {
+  const timeData = {};
+  const timeZonesContainer = document.getElementById("timeZones");
+  timeZonesContainer.innerHTML = "";
+
+  timeZones.forEach(({ name, zone }) => {
+    const time = getFormattedTime(zone);
+    timeData[name] = { zone, time };
+
+    const timeElement = document.createElement("div");
+    timeElement.className = "time-zone";
+    timeElement.innerHTML = `<span>${name}:</span> ${time}`;
+    timeZonesContainer.appendChild(timeElement);
+  });
+
+  // Save to localStorage
+  localStorage.setItem("worldTimes", JSON.stringify(timeData));
+}
+
+// Load times from localStorage on page load
+function loadTimes() {
+  const savedTimes = localStorage.getItem("worldTimes");
+  if (savedTimes) {
+    const timeData = JSON.parse(savedTimes);
+    const timeZonesContainer = document.getElementById("timeZones");
+    timeZonesContainer.innerHTML = "";
+
+    Object.entries(timeData).forEach(([name, { time }]) => {
+      const timeElement = document.createElement("div");
+      timeElement.className = "time-zone";
+      timeElement.innerHTML = `<span>${name}:</span> ${time}`;
+      timeZonesContainer.appendChild(timeElement);
+    });
+
+    // Update immediately after loading to ensure fresh times
+    setTimeout(updateTimes, 1000);
+  } else {
+    updateTimes();
+  }
+}
+
+// Update times every second
+window.addEventListener("load", () => {
+  loadTimes();
+  setInterval(updateTimes, 1000);
+});
+
+// Sample data (replace with real API data in production)
+const flightData = {
+  totalFlights: 120000,
+  topDestination: "New York (JFK)",
+  avgDuration: 3.5,
+  regions: {
+    labels: [
+      "North America",
+      "Europe",
+      "Asia",
+      "Africa",
+      "South America",
+      "Oceania",
+    ],
+    data: [40000, 35000, 30000, 10000, 8000, 7000],
+  },
+  destinations: {
+    labels: ["New York", "London", "Tokyo", "Dubai", "Paris"],
+    data: [15000, 12000, 10000, 9000, 8500],
+  },
+};
+
+// Update stats
+document.getElementById("totalFlights").textContent =
+  flightData.totalFlights.toLocaleString();
+document.getElementById("topDestination").textContent =
+  flightData.topDestination;
+document.getElementById(
+  "avgDuration"
+).textContent = `${flightData.avgDuration} hrs`;
+
+// Region Chart (Bar)
+const regionCtx = document.getElementById("regionChart").getContext("2d");
+new Chart(regionCtx, {
+  type: "bar",
+  data: {
+    labels: flightData.regions.labels,
+    datasets: [
+      {
+        label: "Flights by Region",
+        data: flightData.regions.data,
+        backgroundColor: "rgba(0, 123, 255, 0.5)",
+        borderColor: "rgba(0, 123, 255, 1)",
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: { display: true, text: "Number of Flights" },
+      },
+    },
+  },
+});
+
+// Destination Chart (Pie)
+const destinationCtx = document
+  .getElementById("destinationChart")
+  .getContext("2d");
+new Chart(destinationCtx, {
+  type: "pie",
+  data: {
+    labels: flightData.destinations.labels,
+    datasets: [
+      {
+        label: "Top Destinations",
+        data: flightData.destinations.data,
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+>>>>>>> f783744a0bdbac85cc4cdf0c21a152b8696f4d9a
