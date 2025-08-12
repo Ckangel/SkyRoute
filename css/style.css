@@ -568,7 +568,7 @@ textarea{
 =======
 <<<<<<< HEAD
 >>>>>>> f783744a0bdbac85cc4cdf0c21a152b8696f4d9a
-/* analystics style. */
+/* analytics style. */
 .container-01 {
   max-width: 1200px;
   margin: auto;
@@ -1020,11 +1020,11 @@ a {
 .alert-image {
     height: 150px;
 }
-    /* analystics charts style. */
+    /* analytics charts style. */
     .stats{
       grid-template-columns: 1fr;
     }
-    /* analystics charts style. */
+    /* analytics charts style. */
     .stats{
       grid-template-columns: 1fr;
     }
