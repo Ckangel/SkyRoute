@@ -9,554 +9,196 @@
         <!-- STYLE  -->
         <link rel="stylesheet" href="css/style.css">
         <!-- end here -->
-    
         <!-- script -->
         <script src="./js/main.js" defer></script>
         <script src="./js/script.js" defer></script>
         <!-- end here -->
-    
+
         <!-- icon links -->
         <!--  LINKS FOR fontawesome  ICON -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <!-- end of link for icon icon -->
-    
+
         <!-- google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
-        <!-- end of google fonts -->
+    <!-- end of google fonts -->
+</head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <div class="logo1">Dashboard</div>
-            <nav>
-                <ul>
-                    <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
-                    <li><a href="client.html"> <i class="fa-solid fa-users"></i>Clients</a></li>
-                    <li><a href=""> <i class="fa-solid fa-message"></i>Messages</a></li>
-                    <li><a href=""><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
-                    
-                </ul>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <header>
-                <div class="header">
-                    <div class="logo">
-                        <img src="./images/logo.webp" alt="">
+<div class="container">
+    <aside class="sidebar">
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="logo1">Sky🪽Route</div>
+        <nav>
+            <ul>
+                <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
+                <li><a href="client.html"> <i class="fa-solid fa-users"></i>Clients</a></li>
+                <li><a href=""> <i class="fa-solid fa-message"></i>Messages</a></li>
+                <li><a href=""><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content" aria-label="Main Content">
+        <header>
+            <div class="header">
+                <div class="logo">
+                </div>
+                <button class="btn" type="button" onclick="window.location.href='about.html'">Read More</button> <i class="fas fa-plus"></i>
+                <button class="btn" type="button" onclick="window.location.href='about.html'">Read More</button> <i class="fas fa-plus"></i>
+            </div>
+        </header>
+        <section class="content-area">
+        </section>
+        <section>
+            <div class="notification" id="flightNotification">
+                <p>Loading flight route information...</p>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <p>Booking information has been sent successfully to your email!</p>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-container">
+                <h2>Travel Itinerary Form</h2>
+                <div id="travelForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <p id="firstNameError" class="error-message"></p>
                     </div>
-                    
-                    <button class="btn"><a href="about.html">Read More</a></button> <i class="fas fa-plus"></i>
-                </div>
-            </header>
-            <section class="content-area">
-               
-            </section>
-            <section>
-                 <!-- Notification Section -->
-    <div class="notification" id="flightNotification">
-        <p>Loading flight route information...</p>
-    </div>
-
-    <!-- Success Message -->
-    <div class="success-message" id="successMessage">
-        <p>Booking information has been sent successfully to your email!</p>
-    </div>
-
-    <!-- Form Section -->
-    <div class="form-container">
-        <h2>Travel Itinerary Form</h2>
-        <div id="travelForm">
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required>
-                <p id="firstNameError" class="error-message"></p>
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required>
-                <p id="lastNameError" class="error-message"></p>
-            </div>
-            <div class="form-group">
-                <label for="phoneCode">Phone Number</label>
-                <div class="phone-group">
-                    <select id="phoneCode" name="phoneCode">
-                        <option value="+233">Ghana (+233)</option>
-                        <option value="+234">Nigeria (+234)</option>
-                        <option value="+221">Senegal (+221)</option>
-                        <option value="+225">Côte d'Ivoire (+225)</option>
-                        <option value="+223">Mali (+223)</option>
-                        <option value="+229">Benin (+229)</option>
-                        <option value="+226">Burkina Faso (+226)</option>
-                        <option value="+227">Niger (+227)</option>
-                        <option value="+228">Togo (+228)</option>
-                        <option value="+220">Gambia (+220)</option>
-                        <option value="+231">Liberia (+231)</option>
-                        <option value="+232">Sierra Leone (+232)</option>
-                        <option value="+224">Guinea (+224)</option>
-                        <option value="+245">Guinea-Bissau (+245)</option>
-                        <option value="+239">São Tomé and Príncipe (+239)</option>
-                        <option value="+238">Cape Verde (+238)</option>
-                    </select>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
-                </div>
-                <p id="phoneNumberError" class="error-message"></p>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-                <p id="emailError" class="error-message"></p>
-            </div>
-            <div class="form-group">
-                <label for="origin">Origin (West Africa)</label>
-                <select id="origin" name="origin" required>
-                    <option value="">Select Origin</option>
-                    <option value="ACC">Accra, Ghana (ACC)</option>
-                    <option value="LOS">Lagos, Nigeria (LOS)</option>
-                    <option value="DKR">Dakar, Senegal (DKR)</option>
-                    <option value="ABJ">Abidjan, Côte d'Ivoire (ABJ)</option>
-                    <option value="BKO">Bamako, Mali (BKO)</option>
-                    <option value="COO">Cotonou, Benin (COO)</option>
-                    <option value="OUA">Ouagadougou, Burkina Faso (OUA)</option>
-                    <option value="NIM">Niamey, Niger (NIM)</option>
-                    <option value="LFW">Lomé, Togo (LFW)</option>
-                    <option value="BJL">Banjul, Gambia (BJL)</option>
-                    <option value="MLW">Monrovia, Liberia (MLW)</option>
-                    <option value="FNA">Freetown, Sierra Leone (FNA)</option>
-                    <option value="CKY">Conakry, Guinea (CKY)</option>
-                    <option value="OXB">Bissau, Guinea-Bissau (OXB)</option>
-                    <option value="TMS">São Tomé, São Tomé and Príncipe (TMS)</option>
-                    <option value="RAI">Praia, Cape Verde (RAI)</option>
-                </select>
-                <p id="originError" class="error-message"></p>
-            </div>
-            <div class="form-group">
-                <label for="destination">Destination (Worldwide)</label>
-                <select id="destination" name="destination" required>
-                    <option value="">Select Destination</option>
-                    <!-- Populated dynamically via JavaScript -->
-                </select>
-                <p id="destinationError" class="error-message"></p>
-            </div>
-            <div class="form-group">
-                <label for="hotel">Hotel Selection</label>
-                <select id="hotel" name="hotel" required>
-                    <option value="">Select Hotel</option>
-                    <!-- Populated dynamically based on destination -->
-                </select>
-                <p id="hotelError" class="error-message"></p>
-            </div>
-            <button type="submit" id="submitBtn" class="button">Submit Booking</button>
-        </div>
-    </div>
-            </section>
-            <footer>
-                <div class="footer footer_container">
-                    <article>
-                        <h2>About Us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem doloribus maxime nam, quod itaque
-                            facilis natus vel hic cum magni dolore aut illum modi illo molestias voluptates doloremque
-                            suscipit esse?</p>
-                        <button class="btn"><a href="">Read More</a></button>
-                    </article>
-                    <article>
-                        <h2>Links</h2>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact us</a></li>
-                            <li><a href="index.html">Home</a></li>
-                        </ul>
-                    </article>
-                   
-                    <article>
-                        <h2>Social Media</h2>
-                        <ul class="social">
-                            <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                            </li>
-            
-                        </ul>
-                    </article>
-            
-            
-                </div>
-                <div class="buttom">
-                    <p>&copy; 2025. All right reserved. <span>Airline/Tourism - "SkyRoute Planner</span></p>
-                    <div class="icon-bar">
-                        <ul class="nav-icons">
-                            <li>
-                                <a href="#"><i class="fa-brands fa-wpexplorer"></i></a>
-                                <h3>EXPLORER</h3>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
-                                <h3><li><a href="itinerary.html">BOOKING</a></li></h3>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa-solid fa-bell"></i></a>
-                                <h3>ALERT</h3>
-                            </li>
-                        </ul>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <p id="lastNameError" class="error-message"></p>
                     </div>
+                    <div class="form-group">
+                        <label for="phoneCode">Phone Number</label>
+                        <div class="phone-group">
+                            <select id="phoneCode" name="phoneCode">
+                                <option value="+233">Ghana (+233)</option>
+                                <option value="+234">Nigeria (+234)</option>
+                                <option value="+221">Senegal (+221)</option>
+                                <option value="+225">Côte d'Ivoire (+225)</option>
+                                <option value="+223">Mali (+223)</option>
+                                <option value="+229">Benin (+229)</option>
+                                <option value="+226">Burkina Faso (+226)</option>
+                                <option value="+227">Niger (+227)</option>
+                                <option value="+228">Togo (+228)</option>
+                                <option value="+220">Gambia (+220)</option>
+                                <option value="+231">Liberia (+231)</option>
+                                <option value="+232">Sierra Leone (+232)</option>
+                                <option value="+224">Guinea (+224)</option>
+                                <option value="+245">Guinea-Bissau (+245)</option>
+                                <option value="+239">São Tomé and Príncipe (+239)</option>
+                                <option value="+238">Cape Verde (+238)</option>
+                            </select>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                        </div>
+                        <p id="phoneNumberError" class="error-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <p id="emailError" class="error-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="origin">Origin (West Africa)</label>
+                        <select id="origin" name="origin" required>
+                            <option value="">Select Origin</option>
+                            <option value="ACC">Accra, Ghana (ACC)</option>
+                            <option value="LOS">Lagos, Nigeria (LOS)</option>
+                            <option value="DKR">Dakar, Senegal (DKR)</option>
+                            <option value="ABJ">Abidjan, Côte d'Ivoire (ABJ)</option>
+                            <option value="BKO">Bamako, Mali (BKO)</option>
+                            <option value="COO">Cotonou, Benin (COO)</option>
+                            <option value="OUA">Ouagadougou, Burkina Faso (OUA)</option>
+                            <option value="NIM">Niamey, Niger (NIM)</option>
+                            <option value="LFW">Lomé, Togo (LFW)</option>
+                            <option value="BJL">Banjul, Gambia (BJL)</option>
+                            <option value="MLW">Monrovia, Liberia (MLW)</option>
+                            <option value="FNA">Freetown, Sierra Leone (FNA)</option>
+                            <option value="CKY">Conakry, Guinea (CKY)</option>
+                            <option value="OXB">Bissau, Guinea-Bissau (OXB)</option>
+                            <option value="TMS">São Tomé, São Tomé and Príncipe (TMS)</option>
+                            <option value="RAI">Praia, Cape Verde (RAI)</option>
+                        </select>
+                        <p id="originError" class="error-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination (Worldwide)</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Select Destination</option>
+                            <!-- Populated dynamically via JavaScript -->
+                        </select>
+                        <p id="destinationError" class="error-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="hotel">Hotel Selection</label>
+                        <select id="hotel" name="hotel" required>
+                            <option value="">Select Hotel</option>
+                            <!-- Populated dynamically based on destination -->
+                        </select>
+                        <p id="hotelError" class="error-message"></p>
+                    </div>
+                    <button type="submit" id="submitBtn" class="button">Submit Booking</button>
                 </div>
-            </footer>
-        </main>
-    </div>
-    <!-- <script>
-        // sky route
-   // Aviation Stack API key (replace with your own)
-   const API_KEY = 'bcb571f2f023cb4c798761d96a415314';
-
-// Fetch flight route notification from Aviation Stack API
-async function fetchFlightRoutes() {
-    try {
-        const response = await fetch(`http://api.aviationstack.com/v1/routes?access_key=${API_KEY}&limit=1`);
-        const data = await response.json();
-        if (data.data && data.data.length > 0) {
-            const route = data.data[0];
-            document.getElementById('flightNotification').innerHTML = `
-                <p>Latest Route: ${route.departure.iata} (${route.departure.name}) to 
-                ${route.arrival.iata} (${route.arrival.name}) operated by ${route.airline.name}</p>
-            `;
-        } else {
-            document.getElementById('flightNotification').innerHTML = '<p>No route information available.</p>';
-        }
-    } catch (error) {
-        console.error('Error fetching flight routes:', error);
-        document.getElementById('flightNotification').innerHTML = '<p>Error loading flight route information.</p>';
-    }
-}
-
-// List of countries for destination dropdown (ISO 3166-1 alpha-2 codes)
-const countries = [
-    { code: 'AF', name: 'Afghanistan' },
-    { code: 'AL', name: 'Albania' },
-    { code: 'DZ', name: 'Algeria' },
-    { code: 'AD', name: 'Andorra' },
-    { code: 'AO', name: 'Angola' },
-    { code: 'AR', name: 'Argentina' },
-    { code: 'AM', name: 'Armenia' },
-    { code: 'AU', name: 'Australia' },
-    { code: 'AT', name: 'Austria' },
-    { code: 'AZ', name: 'Azerbaijan' },
-    { code: 'BS', name: 'Bahamas' },
-    { code: 'BH', name: 'Bahrain' },
-    { code: 'BD', name: 'Bangladesh' },
-    { code: 'BB', name: 'Barbados' },
-    { code: 'BY', name: 'Belarus' },
-    { code: 'BE', name: 'Belgium' },
-    { code: 'BZ', name: 'Belize' },
-    { code: 'BJ', name: 'Benin' },
-    { code: 'BT', name: 'Bhutan' },
-    { code: 'BO', name: 'Bolivia' },
-    { code: 'BA', name: 'Bosnia and Herzegovina' },
-    { code: 'BW', name: 'Botswana' },
-    { code: 'BR', name: 'Brazil' },
-    { code: 'BN', name: 'Brunei' },
-    { code: 'BG', name: 'Bulgaria' },
-    { code: 'BF', name: 'Burkina Faso' },
-    { code: 'BI', name: 'Burundi' },
-    { code: 'KH', name: 'Cambodia' },
-    { code: 'CM', name: 'Cameroon' },
-    { code: 'CA', name: 'Canada' },
-    { code: 'CV', name: 'Cape Verde' },
-    { code: 'CF', name: 'Central African Republic' },
-    { code: 'TD', name: 'Chad' },
-    { code: 'CL', name: 'Chile' },
-    { code: 'CN', name: 'China' },
-    { code: 'CO', name: 'Colombia' },
-    { code: 'KM', name: 'Comoros' },
-    { code: 'CG', name: 'Congo' },
-    { code: 'CR', name: 'Costa Rica' },
-    { code: 'HR', name: 'Croatia' },
-    { code: 'CU', name: 'Cuba' },
-    { code: 'CY', name: 'Cyprus' },
-    { code: 'CZ', name: 'Czech Republic' },
-    { code: 'DK', name: 'Denmark' },
-    { code: 'DJ', name: 'Djibouti' },
-    { code: 'DM', name: 'Dominica' },
-    { code: 'DO', name: 'Dominican Republic' },
-    { code: 'EC', name: 'Ecuador' },
-    { code: 'EG', name: 'Egypt' },
-    { code: 'SV', name: 'El Salvador' },
-    { code: 'GQ', name: 'Equatorial Guinea' },
-    { code: 'ER', name: 'Eritrea' },
-    { code: 'EE', name: 'Estonia' },
-    { code: 'ET', name: 'Ethiopia' },
-    { code: 'FJ', name: 'Fiji' },
-    { code: 'FI', name: 'Finland' },
-    { code: 'FR', name: 'France' },
-    { code: 'GA', name: 'Gabon' },
-    { code: 'GM', name: 'Gambia' },
-    { code: 'GE', name: 'Georgia' },
-    { code: 'DE', name: 'Germany' },
-    { code: 'GH', name: 'Ghana' },
-    { code: 'GR', name: 'Greece' },
-    { code: 'GD', name: 'Grenada' },
-    { code: 'GT', name: 'Guatemala' },
-    { code: 'GN', name: 'Guinea' },
-    { code: 'GW', name: 'Guinea-Bissau' },
-    { code: 'GY', name: 'Guyana' },
-    { code: 'HT', name: 'Haiti' },
-    { code: 'HN', name: 'Honduras' },
-    { code: 'HU', name: 'Hungary' },
-    { code: 'IS', name: 'Iceland' },
-    { code: 'IN', name: 'India' },
-    { code: 'ID', name: 'Indonesia' },
-    { code: 'IR', name: 'Iran' },
-    { code: 'IQ', name: 'Iraq' },
-    { code: 'IE', name: 'Ireland' },
-    { code: 'IL', name: 'Israel' },
-    { code: 'IT', name: 'Italy' },
-    { code: 'JM', name: 'Jamaica' },
-    { code: 'JP', name: 'Japan' },
-    { code: 'JO', name: 'Jordan' },
-    { code: 'KZ', name: 'Kazakhstan' },
-    { code: 'KE', name: 'Kenya' },
-    { code: 'KI', name: 'Kiribati' },
-    { code: 'KP', name: 'North Korea' },
-    { code: 'KR', name: 'South Korea' },
-    { code: 'KW', name: 'Kuwait' },
-    { code: 'KG', name: 'Kyrgyzstan' },
-    { code: 'LA', name: 'Laos' },
-    { code: 'LV', name: 'Latvia' },
-    { code: 'LB', name: 'Lebanon' },
-    { code: 'LS', name: 'Lesotho' },
-    { code: 'LR', name: 'Liberia' },
-    { code: 'LY', name: 'Libya' },
-    { code: 'LI', name: 'Liechtenstein' },
-    { code: 'LT', name: 'Lithuania' },
-    { code: 'LU', name: 'Luxembourg' },
-    { code: 'MG', name: 'Madagascar' },
-    { code: 'MW', name: 'Malawi' },
-    { code: 'MY', name: 'Malaysia' },
-    { code: 'MV', name: 'Maldives' },
-    { code: 'ML', name: 'Mali' },
-    { code: 'MT', name: 'Malta' },
-    { code: 'MH', name: 'Marshall Islands' },
-    { code: 'MR', name: 'Mauritania' },
-    { code: 'MU', name: 'Mauritius' },
-    { code: 'MX', name: 'Mexico' },
-    { code: 'FM', name: 'Micronesia' },
-    { code: 'MD', name: 'Moldova' },
-    { code: 'MC', name: 'Monaco' },
-    { code: 'MN', name: 'Mongolia' },
-    { code: 'ME', name: 'Montenegro' },
-    { code: 'MA', name: 'Morocco' },
-    { code: 'MZ', name: 'Mozambique' },
-    { code: 'MM', name: 'Myanmar' },
-    { code: 'NA', name: 'Namibia' },
-    { code: 'NR', name: 'Nauru' },
-    { code: 'NP', name: 'Nepal' },
-    { code: 'NL', name: 'Netherlands' },
-    { code: 'NZ', name: 'New Zealand' },
-    { code: 'NI', name: 'Nicaragua' },
-    { code: 'NE', name: 'Niger' },
-    { code: 'NG', name: 'Nigeria' },
-    { code: 'NO', name: 'Norway' },
-    { code: 'OM', name: 'Oman' },
-    { code: 'PK', name: 'Pakistan' },
-    { code: 'PW', name: 'Palau' },
-    { code: 'PA', name: 'Panama' },
-    { code: 'PG', name: 'Papua New Guinea' },
-    { code: 'PY', name: 'Paraguay' },
-    { code: 'PE', name: 'Peru' },
-    { code: 'PH', name: 'Philippines' },
-    { code: 'PL', name: 'Poland' },
-    { code: 'PT', name: 'Portugal' },
-    { code: 'QA', name: 'Qatar' },
-    { code: 'RO', name: 'Romania' },
-    { code: 'RU', name: 'Russia' },
-    { code: 'RW', name: 'Rwanda' },
-    { code: 'KN', name: 'Saint Kitts and Nevis' },
-    { code: 'LC', name: 'Saint Lucia' },
-    { code: 'VC', name: 'Saint Vincent and the Grenadines' },
-    { code: 'WS', name: 'Samoa' },
-    { code: 'SM', name: 'San Marino' },
-    { code: 'ST', name: 'São Tomé and Príncipe' },
-    { code: 'SA', name: 'Saudi Arabia' },
-    { code: 'SN', name: 'Senegal' },
-    { code: 'RS', name: 'Serbia' },
-    { code: 'SC', name: 'Seychelles' },
-    { code: 'SL', name: 'Sierra Leone' },
-    { code: 'SG', name: 'Singapore' },
-    { code: 'SK', name: 'Slovakia' },
-    { code: 'SI', name: 'Slovenia' },
-    { code: 'SB', name: 'Solomon Islands' },
-    { code: 'SO', name: 'Somalia' },
-    { code: 'ZA', name: 'South Africa' },
-    { code: 'SS', name: 'South Sudan' },
-    { code: 'ES', name: 'Spain' },
-    { code: 'LK', name: 'Sri Lanka' },
-    { code: 'SD', name: 'Sudan' },
-    { code: 'SR', name: 'Suriname' },
-    { code: 'SE', name: 'Sweden' },
-    { code: 'CH', name: 'Switzerland' },
-    { code: 'SY', name: 'Syria' },
-    { code: 'TW', name: 'Taiwan' },
-    { code: 'TJ', name: 'Tajikistan' },
-    { code: 'TZ', name: 'Tanzania' },
-    { code: 'TH', name: 'Thailand' },
-    { code: 'TL', name: 'Timor-Leste' },
-    { code: 'TG', name: 'Togo' },
-    { code: 'TO', name: 'Tonga' },
-    { code: 'TT', name: 'Trinidad and Tobago' },
-    { code: 'TN', name: 'Tunisia' },
-    { code: 'TR', name: 'Turkey' },
-    { code: 'TM', name: 'Turkmenistan' },
-    { code: 'TV', name: 'Tuvalu' },
-    { code: 'UG', name: 'Uganda' },
-    { code: 'UA', name: 'Ukraine' },
-    { code: 'AE', name: 'United Arab Emirates' },
-    { code: 'GB', name: 'United Kingdom' },
-    { code: 'US', name: 'United States' },
-    { code: 'UY', name: 'Uruguay' },
-    { code: 'UZ', name: 'Uzbekistan' },
-    { code: 'VU', name: 'Vanuatu' },
-    { code: 'VE', name: 'Venezuela' },
-    { code: 'VN', name: 'Vietnam' },
-    { code: 'YE', name: 'Yemen' },
-    { code: 'ZM', name: 'Zambia' },
-    { code: 'ZW', name: 'Zimbabwe' }
-];
-
-// Dummy hotel data (replace with real hotel API if available)
-const hotels = {
-    'US': [
-        { name: 'Hilton New York', value: 'hilton-ny' },
-        { name: 'Marriott Los Angeles', value: 'marriott-la' }
-    ],
-    'FR': [
-        { name: 'Paris Marriott', value: 'paris-marriott' },
-        { name: 'Le Bristol Paris', value: 'le-bristol' }
-    ],
-    'JP': [
-        { name: 'Tokyo Hilton', value: 'tokyo-hilton' },
-        { name: 'Hyatt Regency Tokyo', value: 'hyatt-tokyo' }
-    ],
-    'default': [
-        { name: 'Generic Hotel', value: 'generic-hotel' },
-        { name: 'Standard Inn', value: 'standard-inn' }
-    ]
-};
-
-// Populate destination dropdown
-function populateDestinations() {
-    const destinationSelect = document.getElementById('destination');
-    countries.forEach(country => {
-        const option = document.createElement('option');
-        option.value = country.code;
-        option.textContent = country.name;
-        destinationSelect.appendChild(option);
-    });
-}
-
-// Populate hotels based on destination
-function populateHotels(countryCode) {
-    const hotelSelect = document.getElementById('hotel');
-    hotelSelect.innerHTML = '<option value="">Select Hotel</option>';
-    const availableHotels = hotels[countryCode] || hotels['default'];
-    availableHotels.forEach(hotel => {
-        const option = document.createElement('option');
-        option.value = hotel.value;
-        option.textContent = hotel.name;
-        hotelSelect.appendChild(option);
-    });
-}
-
-// Form validation
-function validateForm() {
-    let isValid = true;
-    const fields = [
-        { id: 'firstName', errorId: 'firstNameError', regex: /^[A-Za-z]{2,}$/, message: 'First name must be at least 2 letters' },
-        { id: 'lastName', errorId: 'lastNameError', regex: /^[A-Za-z]{2,}$/, message: 'Last name must be at least 2 letters' },
-        { id: 'phoneNumber', errorId: 'phoneNumberError', regex: /^\d{7,15}$/, message: 'Phone number must be 7-15 digits' },
-        { id: 'email', errorId: 'emailError', regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Invalid email address' },
-        { id: 'origin', errorId: 'originError', regex: /.+/, message: 'Please select an origin' },
-        { id: 'destination', errorId: 'destinationError', regex: /.+/, message: 'Please select a destination' },
-        { id: 'hotel', errorId: 'hotelError', regex: /.+/, message: 'Please select a hotel' }
-    ];
-
-    fields.forEach(field => {
-        const input = document.getElementById(field.id);
-        const error = document.getElementById(field.errorId);
-        if (!field.regex.test(input.value)) {
-            input.classList.add('error');
-            error.textContent = field.message;
-            error.style.display = 'block';
-            isValid = false;
-        } else {
-            input.classList.remove('error');
-            error.style.display = 'none';
-        }
-    });
-
-    return isValid;
-}
-
-// Send booking details via mailto
-function sendBookingEmail(formData) {
-    const { firstName, lastName, phoneCode, phoneNumber, email, origin, destination, hotel } = formData;
-    const destinationName = countries.find(c => c.code === destination)?.name || destination;
-    const hotelName = Array.from(document.getElementById('hotel').options).find(opt => opt.value === hotel)?.text || hotel;
-    const originName = Array.from(document.getElementById('origin').options).find(opt => opt.value === origin)?.text || origin;
-    const subject = encodeURIComponent('Your Travel Booking Confirmation');
-    const body = encodeURIComponent(
-        `Dear ${firstName} ${lastName},\n\n` +
-        `Thank you for your booking! Here are your details:\n\n` +
-        `Name: ${firstName} ${lastName}\n` +
-        `Phone: ${phoneCode}${phoneNumber}\n` +
-        `Email: ${email}\n` +
-        `Travel: From ${originName} to ${destinationName}\n` +
-        `Hotel: ${hotelName}\n\n` +
-        `We look forward to assisting you with your travel plans!\n` +
-        `Best regards,\nTravel Itinerary Team`
-    );
-    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-}
-
-// Event listeners
-document.getElementById('destination').addEventListener('change', (e) => {
-    populateHotels(e.target.value);
-});
-
-document.getElementById('travelForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-        const formData = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            phoneCode: document.getElementById('phoneCode').value,
-            phoneNumber: document.getElementById('phoneNumber').value,
-            email: document.getElementById('email').value,
-            origin: document.getElementById('origin').value,
-            destination: document.getElementById('destination').value,
-            hotel: document.getElementById('hotel').value
-        };
-        sendBookingEmail(formData);
-        document.getElementById('successMessage').style.display = 'block';
-        setTimeout(() => {
-            document.getElementById('successMessage').style.display = 'none';
-        }, 5000); // Hide success message after 5 seconds
-        document.getElementById('travelForm').reset();
-        document.getElementById('hotel').innerHTML = '<option value="">Select Hotel</option>';
-    }
-});
-
-// Initialize
-fetchFlightRoutes();
-populateDestinations();
-    </script> -->
-    
+            </div>
+        </section>
+        <footer>
+            <div class="footer-content">
+                <article>
+                    <h2>About Us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem doloribus maxime nam, quod itaque
+                        facilis natus vel hic cum magni dolore aut illum modi illo molestias voluptates doloremque
+                    </p>
+                    <button class="btn" type="button" onclick="window.location.href='about.html'">Read More</button>
+                </article>
+                <article>
+                    <h2>Links</h2>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Social Media</h2>
+                    <ul class="social">
+                        <li>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <div class="buttom">
+                <p>&copy; 2025. All right reserved. <span>Airline/Tourism - "SkyRoute Planner</span></p>
+                <div class="icon-bar">
+                    <ul class="nav-icons">
+                        <li>
+                            <a href="#" aria-label="Explorer"><i class="fa-brands fa-wpexplorer"></i> Explorer</a>
+                        </li>
+                        <li>
+                            <a href="itinerary.html" aria-label="Booking"><i class="fa-solid fa-calendar-days"></i> Booking</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Alert"><i class="fa-solid fa-bell"></i> Alert</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </main>
+</div>
 </body>
 </html>
