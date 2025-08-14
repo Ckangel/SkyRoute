@@ -15,16 +15,22 @@
 <body>
   <div class="container">
     <aside class="sidebar">
-      <!-- Sidebar loaded from index.html -->
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      <div class="logo1">Sky🪽Route</div>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="clients.html">Partners</a></li>
-          <!-- Add more links as needed -->
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-person"></i>About</a></li>
+          <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
+          <li><a href="client.html"><i class="fa-solid fa-users"></i>Clients</a></li>
+          <li><a href="message.html"><i class="fa-solid fa-message"></i>Messages</a></li>
         </ul>
       </nav>
+
     </aside>
+    <li><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a></li>
+
 
     <main class="main-content">
       <div id="header-placeholder"></div>
@@ -33,6 +39,19 @@
         <h1>About SkyRoute</h1>
         <p>SkyRoute is a legacy-driven travel planner designed to empower journeys across West Africa and beyond. We blend technology with heart, helping travelers connect with culture, community, and purpose.</p>
       </section>
+
+      <!-- Image Grid Section -->
+<section class="image-grid">
+  <h2>Memorable Moments Captured</h2>
+  <div class="grid-container">
+    <div class="grid-item"><img src="./images/worldmap.webp" alt="SkyRoute Global Reach" ></div>
+    <div class="grid-item"><img src="./images/landscape1.webp" alt="Client's delight1"></div>
+    <div class="grid-item"><img src="./images/landscape2.webp" alt="Client's delight2"></div>
+    <div class="grid-item"><img src="./images/tourism6.webp" alt="Client's delight3"></div>
+    <div class="grid-item"><img src="./images/US_city1.webp" alt="Client's delight4"></div>
+  </div>
+</section>
+
 
       <section class="about">
         <h3>Our Mission</h3>
@@ -56,15 +75,5 @@
       <div id="footer-placeholder"></div>
     </main>
   </div>
-
-  <script>
-    fetch('partials/header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header-placeholder').innerHTML = data);
-
-    fetch('partials/footer.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-  </script>
 </body>
 </html>

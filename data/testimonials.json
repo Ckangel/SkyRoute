@@ -1,0 +1,13 @@
+[
+  { "name": "Amina T.", "quote": "SkyRoute Planner turned our chaotic itinerary into a seamless adventure. Highly recommended!" },
+  { "name": "Kwame B.", "quote": "The dashboard was intuitive and empowering. I felt in control of my journey." },
+  { "name": "Grace N.", "quote": "I loved the legacy theme—it made our family trip feel sacred." },
+  { "name": "Yaw M.", "quote": "Animations and geolocation features made planning fun and interactive." },
+  { "name": "Nana E.", "quote": "SkyRoute helped me reconnect with my roots while exploring new places." },
+  { "name": "Akosua D.", "quote": "The filtering tools were a lifesaver for our multi-generational trip." },
+  { "name": "Kojo A.", "quote": "I felt seen. The UX design honored our story beautifully." },
+  { "name": "Efua S.", "quote": "From solo travel to family bonding, SkyRoute adapts with grace." },
+  { "name": "Michael O.", "quote": "The analytics gave us insights we didn’t know we needed." },
+  { "name": "Abena K.", "quote": "SkyRoute isn’t just a planner—it’s a memory maker." }
+]
+--- a/data/testimonials.json

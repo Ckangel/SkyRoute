@@ -1,43 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clients | SkyRoute Planner</title>
-  <link rel="icon" href="./images/download (1).png">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="./js/main.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message | SkyRoute Planner</title>
+<link rel="icon" href="./images/download (1).png">
+<link rel="stylesheet" href="css/style.css">
+<script src="./js/main.js" defer></script>
+<script src="./js/main1.js" defer></script>
+<script src="./js/scripts.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-      <div class="logo1">Sky🪽Route</div>
-      <nav>
+<div class="container">
+<aside class="sidebar">
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="logo1">Sky🪽Route</div>
+    <nav>
         <ul>
-          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-          <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
-          <li><a href="client.html"><i class="fa-solid fa-users"></i>Clients</a></li>
-          <li><a href="message.html"><i class="fa-solid fa-message"></i>Messages</a></li>
-          <li><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-book"></i>About</a></li>
+            <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
+            <li><a href="client.html"><i class="fa-solid fa-users"></i>Clients</a></li>
+            <li><a href="message.html"><i class="fa-solid fa-message"></i>Messages</a></li>
+            <li><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a></li>
         </ul>
       </nav>
-    </aside>
+</aside>
 
-    <main class="main-content" aria-label="SkyRoute Main Content">
-      <!-- Load header partial -->
+    <main class="main-content">
       <div id="header-placeholder"></div>
-      <h1>Welcome to Our Website</h1>
-      <p>Content goes here...</p>
-      <footer>
-        <div class="time-zones" id="timeZones">
-          <!-- Time zones will be populated by JavaScript -->
-        </div>
-      </footer>
-    </main>
+
+<!-- Image Grid Section -->
+<section class="image-grid">
+  <h2>Memorable Moments Captured</h2>
+  <div class="grid-container">
+    <div class="grid-item"><img src="./images/tourism.webp" alt="Client Journey 1" ></div>
+    <div class="grid-item"><img src="./images/tourism2.webp" alt="Client Journey 2"></div>
+    <div class="grid-item"><img src="./images/tourism3.webp" alt="Client Journey 3"></div>
+    <div class="grid-item"><img src="./images/tourism1.webp" alt="Client Journey 4"></div>
   </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+<h2>What Our Clients Say</h2>
+<div id="testimonial-list" class="testimonial-list"></div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <article>
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      <button class="btn" type="button" onclick="window.location.href='about.html'">Read More</button>
+    </article>
+    <article>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>Social Media</h2>
+      <ul class="social">
+        <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="bottom">
+    <p>&copy; 2025. All rights reserved. <span>Airline/Tourism - "SkyRoute Planner"</span></p>
+    <div class="icon-bar">
+      <ul class="nav-icons">
+        <li><a href="#"><i class="fa-brands fa-wpexplorer"></i> Explorer</a></li>
+        <li><a href="itinerary.html"><i class="fa-solid fa-calendar-days"></i> Booking</a></li>
+        <li><a href="#"><i class="fa-solid fa-bell"></i> Alert</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</main>
+</div>
 </body>
-</html>
-    
