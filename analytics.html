@@ -1,144 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SKYROUTE | WEST AFRICA 2025</title>
-  <link rel="icon" href="./images/download (1).png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css">
-  <!-- script -->
-   <script src="./js/main.js" defer></script>
-   
-
-  <!-- google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet">
-  <!-- end of google fonts -->
-</head>
+<%- include('partials/header') %>
 <body>
+  <div class="container"></div>
+  <div id="partial-placeholder"></div>
+  <div id="partials-navbar.html"
+    <aside 
+<footer>
+  <div class="footer-content">
+    <article>
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      <button class="btn" type="button" onclick="window.location.href='about.html'">Read More</button>
+    </article>
+    <article>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>Social Media</h2>
+      <ul class="social">
+        <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+      </ul>
+    </article>
+  </div>
 
-  <!-- Header -->
-  <header>
-   
-    <button class="btn"><a href="about.html">Read More</a></button> <i class="fas fa-plus"></i>
-    <i class="fas fa-bars menu-btn" id="open-menu"></i>
-  </header>
-
-  <div class="container">
-    <aside class="sidebar">
-      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-      <div class="logo1">Sky🪽Route</div>
-      <nav>
-        <ul>
-          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-person"></i>About</a></li>
-          <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
-          <li><a href="client.html"><i class="fa-solid fa-users"></i>Clients</a></li>
-          <li><a href="message.html"><i class="fa-solid fa-message"></i>Messages</a></li>
-          <li><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
-          <li><a href="contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a></li>
-        </ul>
-      </nav>
-    </aside>
-      <main class="main-content">
-            <section>
-                <div class="container_01">
-                    <h1>Daily Flight Travel Analytics</h1>
-                    <div class="stats">
-                        <div class="stat-card">
-                            <h3>Total Flights Today</h3>
-                            <p id="totalFlights">0</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Top Destination</h3>
-                            <p id="topDestination">Loading...</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Average Flight Duration</h3>
-                            <p id="avgDuration">0 hrs</p>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <h2>Flights by Region</h2>
-                        <canvas id="regionChart"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <h2>Top 5 Destinations</h2>
-                        <canvas id="destinationChart"></canvas>
-                    </div>
-                </div>
-            </section>
-            <footer>
-                <div class="footer footer_container">
-                    <article>
-                        <h2>About Us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem doloribus maxime nam, quod itaque
-                            facilis natus vel hic cum magni dolore aut illum modi illo molestias voluptates doloremque
-                            suscipit esse?</p>
-                        <button class="btn"><a href="">Read More</a></button>
-                    </article>
-                    <article>
-                        <h2>Links</h2>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact us</a></li>
-                            <li><a href="index.html">Home</a></li>
-                        </ul>
-                    </article>
-                   
-                    <article>
-                        <h2>Social Media</h2>
-                        <ul class="social">
-                            <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                            </li>
-            
-                        </ul>
-                    </article>
-                </div>
-                <div class="buttom">
-                    <p>&copy; 2025. All right reserved. <span>Airline/Tourism - "SkyRoute Planner</span></p>
-                    <div class="icon-bar">
-                        <ul class="nav-icons">
-                            <li>
-                                <a href="#"><i class="fa-brands fa-wpexplorer"></i></a>
-                                <h3>EXPLORER</h3>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
-                                <h3><li><a href="itinerary.html">BOOKING</a></li></h3>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa-solid fa-bell"></i></a>
-                                <h3>ALERT</h3>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-            <script>
-                const sidebar = document.getElementById('sidebar');
-               const openMenu = document.getElementById('open-menu');
-               const closeMenu = document.getElementById('close-menu');
-           
-               openMenu.addEventListener('click', () => {
-                 sidebar.classList.add('show');
-               });
-           
-               closeMenu.addEventListener('click', () => {
-                 sidebar.classList.remove('show');
-               });
-               </script>
-                
-               </body>
-            </html>
+  <div class="bottom">
+    <p>&copy; 2025. All rights reserved. <span>Airline/Tourism - "SkyRoute Planner"</span></p>
+    <div class="icon-bar">
+      <ul class="nav-icons">
+        <li><a href="#"><i class="fa-brands fa-wpexplorer"></i> Explorer</a></li>
+        <li><a href="itinerary.html"><i class="fa-solid fa-calendar-days"></i> Booking</a></li>
+        <li><a href="#"><i class="fa-solid fa-bell"></i> Alert</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
