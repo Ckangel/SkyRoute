@@ -397,3 +397,9 @@ document.getElementById("travelForm").addEventListener("submit", (e) => {
 // Initialize
 fetchFlightRoutes();
 populateDestinations();
+
+fetch("flights.json")
+  .then((response) => response.json())
+  .then((data) => {
+    localStorage.setItem("flightsData", JSON.stringify(data));
+  });

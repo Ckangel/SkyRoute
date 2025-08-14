@@ -68,13 +68,24 @@ const alertMessage = document.getElementById("alert-message");
 
 const SkyRouteAlerts = {
   news: [
-    "New festival in Ghana: Explore the vibrant Ashanti culture at the Kumasi Adae Festival, starting August 15, 2025!",
-    "Nigeria's Osun-Osogbo Festival 2025: A UNESCO site opens for tourists with enhanced safety measures.",
-    "Senegal's Goree Island tours expanded: Visit historic sites with new guided tours starting next month.",
+    {
+      text: "New festival in Ghana: Explore the vibrant Ashanti culture at the Kumasi Adae Festival, starting August 15, 2025!",
+      url: "https://www.ghana.travel/events/kumasi-adae-festival",
+    },
+    {
+      text: "Nigeria's Osun-Osogbo Festival 2025: A UNESCO site opens for tourists with enhanced safety measures.",
+      url: "https://whc.unesco.org/en/list/1118",
+    },
+    {
+      text: "Senegal's Goree Island tours expanded: Visit historic sites with new guided tours starting next month.",
+      url: "https://www.senegal-tourism.com/goree-island",
+    },
   ],
   update() {
     const randomNews = this.news[Math.floor(Math.random() * this.news.length)];
-    if (alertMessage) alertMessage.textContent = randomNews;
+    if (alertMessage) {
+      alertMessage.innerHTML = `<a href="${randomNews.url}" target="_blank">${randomNews.text}</a>`;
+    }
   },
   init() {
     this.update();
@@ -83,6 +94,7 @@ const SkyRouteAlerts = {
 };
 
 SkyRouteAlerts.init();
+
 //   init() {
 // === Tour Content Loader ===
 fetch("data/description.json")
