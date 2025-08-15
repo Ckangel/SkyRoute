@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKYROUTE | WEST AFRICA 2025</title>
+  <link rel="icon" href="./images/download (1).png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <!-- script -->
+   <script src="./js/main.js" defer></script>
+   <script src="./js/script.js" defer></script>
+   
+
+  <!-- google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+  <!-- end of google fonts -->
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="./images/logo.webp" alt="" height="40">
+    </div>
+    <button class="btn"><a href="about.html">Read More</a></button> <i class="fas fa-plus"></i>
+    <i class="fas fa-bars menu-btn" id="open-menu"></i>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      <div class="logo1">Sky🪽Route</div>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-person"></i>About</a></li>
+          <li><a href="itinerary.html"><i class="fa-solid fa-plane-circle-check"></i>Itinerary Builder</a></li>
+          <li><a href="client.html"><i class="fa-solid fa-users"></i>Clients</a></li>
+          <li><a href="message.html"><i class="fa-solid fa-message"></i>Messages</a></li>
+          <li><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i>Analytics</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a></li>
+        </ul>
+      </nav>
+    </aside>
+      <main class="main-content">
+            <section>
+                 <!-- Notification Section -->
+    <div class="notification" id="flightNotification">
+        <p>Loading flight route information...</p>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <p>Booking information has been sent successfully to your email!</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Travel Itinerary Form</h2>
+        <div id="travelForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <p id="firstNameError" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <p id="lastNameError" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="phoneCode">Phone Number</label>
+                <div class="phone-group">
+                    <select id="phoneCode" name="phoneCode">
+                        <option value="+233">Ghana (+233)</option>
+                        <option value="+234">Nigeria (+234)</option>
+                        <option value="+221">Senegal (+221)</option>
+                        <option value="+225">Côte d'Ivoire (+225)</option>
+                        <option value="+223">Mali (+223)</option>
+                        <option value="+229">Benin (+229)</option>
+                        <option value="+226">Burkina Faso (+226)</option>
+                        <option value="+227">Niger (+227)</option>
+                        <option value="+228">Togo (+228)</option>
+                        <option value="+220">Gambia (+220)</option>
+                        <option value="+231">Liberia (+231)</option>
+                        <option value="+232">Sierra Leone (+232)</option>
+                        <option value="+224">Guinea (+224)</option>
+                        <option value="+245">Guinea-Bissau (+245)</option>
+                        <option value="+239">São Tomé and Príncipe (+239)</option>
+                        <option value="+238">Cape Verde (+238)</option>
+                    </select>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <p id="phoneNumberError" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <p id="emailError" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="origin">Origin (West Africa)</label>
+                <select id="origin" name="origin" required>
+                    <option value="">Select Origin</option>
+                    <option value="ACC">Accra, Ghana (ACC)</option>
+                    <option value="LOS">Lagos, Nigeria (LOS)</option>
+                    <option value="DKR">Dakar, Senegal (DKR)</option>
+                    <option value="ABJ">Abidjan, Côte d'Ivoire (ABJ)</option>
+                    <option value="BKO">Bamako, Mali (BKO)</option>
+                    <option value="COO">Cotonou, Benin (COO)</option>
+                    <option value="OUA">Ouagadougou, Burkina Faso (OUA)</option>
+                    <option value="NIM">Niamey, Niger (NIM)</option>
+                    <option value="LFW">Lomé, Togo (LFW)</option>
+                    <option value="BJL">Banjul, Gambia (BJL)</option>
+                    <option value="MLW">Monrovia, Liberia (MLW)</option>
+                    <option value="FNA">Freetown, Sierra Leone (FNA)</option>
+                    <option value="CKY">Conakry, Guinea (CKY)</option>
+                    <option value="OXB">Bissau, Guinea-Bissau (OXB)</option>
+                    <option value="TMS">São Tomé, São Tomé and Príncipe (TMS)</option>
+                    <option value="RAI">Praia, Cape Verde (RAI)</option>
+                </select>
+                <p id="originError" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination (Worldwide)</label>
+                <select id="destination" name="destination" required>
+                    <option value="">Select Destination</option>
+                    <!-- Populated dynamically via JavaScript -->
+                </select>
+                <p id="destinationError" class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="hotel">Hotel Selection</label>
+                <select id="hotel" name="hotel" required>
+                    <option value="">Select Hotel</option>
+                    <!-- Populated dynamically based on destination -->
+                </select>
+                <p id="hotelError" class="error-message"></p>
+            </div>
+            <button type="submit" id="submitBtn" class="button">Submit Booking</button>
+        </div>
+    </div>
+            </section>
+            <footer>
+                <div class="footer footer_container">
+                    <article>
+                        <h2>About Us</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem doloribus maxime nam, quod itaque
+                            facilis natus vel hic cum magni dolore aut illum modi illo molestias voluptates doloremque
+                            suscipit esse?</p>
+                        <button class="btn"><a href="">Read More</a></button>
+                    </article>
+                    <article>
+                        <h2>Links</h2>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                            <li><a href="index.html">Home</a></li>
+                        </ul>
+                    </article>
+                   
+                    <article>
+                        <h2>Social Media</h2>
+                        <ul class="social">
+                            <li>
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+            
+                        </ul>
+                    </article>
+            
+            
+                </div>
+                <div class="buttom">
+                    <p>&copy; 2025. All right reserved. <span>Airline/Tourism - "SkyRoute Planner</span></p>
+                    <div class="icon-bar">
+                        <ul class="nav-icons">
+                            <li>
+                                <a href="#"><i class="fa-brands fa-wpexplorer"></i></a>
+                                <h3>EXPLORER</h3>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
+                                <h3><li><a href="itinerary.html">BOOKING</a></li></h3>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-bell"></i></a>
+                                <h3>ALERT</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script>
+     const sidebar = document.getElementById('sidebar');
+    const openMenu = document.getElementById('open-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    openMenu.addEventListener('click', () => {
+      sidebar.classList.add('show');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      sidebar.classList.remove('show');
+    });
+    </script>
+    
+</body>
+</html>
